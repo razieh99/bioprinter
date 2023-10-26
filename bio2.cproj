@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.1</ProjectVersion>
+    <ToolchainName>com.HPInfoTech.CodeVisionAVR.C</ToolchainName>
+    <ProjectGuid>{FD2885F2-423D-497C-A76A-A46C3F34E8A0}</ProjectGuid>
+    <avrdevice>ATmega2560</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.cof</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>bio2</AssemblyName>
+    <Name>bio2</Name>
+    <RootNamespace>bio2</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue />
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <CV>
+        <CVProjectPath>"bio2.prj"</CVProjectPath>
+      </CV>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <CV>
+        <CVProjectPath>"bio2.prj"</CVProjectPath>
+      </CV>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="bio2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Folder Include="glcd_fonts\" />
+    <Compile Include="glcd_fonts\arial.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_fonts\arial_narrow.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_fonts\arial_narrow_bold.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Folder Include="glcd_libs\" />
+    <Compile Include="glcd_libs\glcdsia.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Folder Include="glcd_icons\" />
+    <Compile Include="glcd_icons\left.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\right.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\desired.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\status.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\time.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\off.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\on.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\intensity.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\select.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\down.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\up.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\data.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd_icons\logo.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\vs\\CV.targets" />
+</Project>
